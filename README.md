@@ -1,5 +1,5 @@
 # ITP Project on Sales and Marketing System
-2018 2nd year 2nd semester project
+2018-2nd year 2nd semester project
 
 Description:
 
