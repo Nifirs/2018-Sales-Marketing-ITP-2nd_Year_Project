@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="returnI" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="68644ad2-b718-4ae7-ac0f-d5ec9e8e08ad">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from returnitems
+]]>
+	</queryString>
+	<field name="rpid" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rname" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="retq" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="43" splitType="Stretch">
+			<staticText>
+				<reportElement x="227" y="11" width="100" height="20" uuid="0fc82d63-3b6b-47ee-a18c-50414e17c407"/>
+				<text><![CDATA[Luckyland]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="227" y="7" width="100" height="20" uuid="55a3e193-5a05-4568-b540-b2080b3f194b"/>
+				<text><![CDATA[Return Items]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="106" y="25" width="25" height="20" uuid="c1a92d13-00c6-4c7a-a479-faa587c57c84"/>
+				<text><![CDATA[rpid]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="254" y="25" width="30" height="20" uuid="cdba4248-6155-4176-afce-a73029043ee7"/>
+				<text><![CDATA[rname]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="404" y="25" width="25" height="20" uuid="faad6b53-d598-44c6-ac7f-c2124d146dd1"/>
+				<text><![CDATA[retq]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="61" splitType="Stretch">
+			<textField>
+				<reportElement x="106" y="15" width="25" height="20" uuid="9071564e-1b8a-4185-a811-67efa1de4b81"/>
+				<textFieldExpression><![CDATA[$F{rpid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="254" y="15" width="25" height="20" uuid="6451e448-e41a-4bca-8f88-622528fb5d73"/>
+				<textFieldExpression><![CDATA[$F{rname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="404" y="15" width="25" height="20" uuid="7999173d-e508-47fd-aa11-eb012ac08960"/>
+				<textFieldExpression><![CDATA[$F{retq}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="28" y="34" width="178" height="20" uuid="cb25d531-157d-4188-8e2a-45f79279e106"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="429" y="34" width="100" height="20" uuid="c10b8f65-14c8-4d90-86f1-99096a771176"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

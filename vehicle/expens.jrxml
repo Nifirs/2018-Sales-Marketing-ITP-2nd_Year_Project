@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9c377783-b9ea-4acf-a2df-4ebf2650ef5e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     expen.`eid` AS expen_eid,
+     expen.`etype` AS expen_etype,
+     expen.`pricelist` AS expen_pricelist,
+     expen.`date` AS expen_date,
+     expen.`Quntity` AS expen_Quntity,
+     expen.`ExpenceAmount` AS expen_ExpenceAmount
+FROM
+     `expen` expen]]>
+	</queryString>
+	<field name="expen_eid" class="java.lang.Integer"/>
+	<field name="expen_etype" class="java.lang.String"/>
+	<field name="expen_pricelist" class="java.lang.String"/>
+	<field name="expen_date" class="java.lang.String"/>
+	<field name="expen_Quntity" class="java.lang.Integer"/>
+	<field name="expen_ExpenceAmount" class="java.lang.Double"/>
+	<group name="expen_eid">
+		<groupExpression><![CDATA[$F{expen_eid}]]></groupExpression>
+		<groupHeader>
+			<band height="40">
+				<textField>
+					<reportElement style="SubTitle" x="0" y="16" width="506" height="24" forecolor="#006600" uuid="634854a3-dd63-4497-995b-d619fa3e1d12"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{expen_eid}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="0" y="0" width="263" height="33" uuid="475baf79-6a0c-40a1-864d-5f3c3a6b21bc"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Luckyland]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="211" y="48" width="174" height="22" uuid="193b3d7b-dddb-4c2e-a8ba-2201aa2394f6"/>
+				<textElement textAlignment="Justified">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Expence Report]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="33" width="100" height="37" uuid="c48282af-ac43-4b74-af63-2d7f8c69ba7e"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Puttalam Road,
+Kelimune
+]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="db07a325-6614-456c-9339-d5bbcbde8078"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="111" height="15" uuid="dfa700e4-bf74-4859-ac14-1152fc4043d6"/>
+				<text><![CDATA[etype]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="111" y="19" width="111" height="15" uuid="00b196d9-9af3-4903-9ae3-2f75bb9a3a03"/>
+				<text><![CDATA[pricelist]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="222" y="19" width="111" height="15" uuid="ec89bb9f-c0ad-4174-9f77-32d4a224c309"/>
+				<text><![CDATA[date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="333" y="19" width="111" height="15" uuid="2f284cc6-51a4-43eb-8185-a59159fa8696"/>
+				<text><![CDATA[Quntity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="444" y="19" width="111" height="15" uuid="03716b74-9ec9-4fd8-b216-9efec331c68c"/>
+				<text><![CDATA[expen_ExpenceAmount]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="7abe1ad6-d151-40f2-ac77-c067c6577018"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="111" height="15" uuid="da95a701-a5b8-464d-9dea-aa3f5642a7c3"/>
+				<textFieldExpression><![CDATA[$F{expen_etype}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="111" y="0" width="111" height="15" uuid="aa37480c-290a-4937-96a6-e4efee1c0898"/>
+				<textFieldExpression><![CDATA[$F{expen_pricelist}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="222" y="0" width="111" height="15" uuid="209d5f12-f1a4-44d4-be77-786e1da67379"/>
+				<textFieldExpression><![CDATA[$F{expen_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="333" y="0" width="111" height="15" uuid="21760c79-24fa-418f-a994-19632f2cd61e"/>
+				<textFieldExpression><![CDATA[$F{expen_Quntity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="444" y="0" width="111" height="15" uuid="46b1c56d-af0d-4e68-a8e3-26f89a4b2b79"/>
+				<textFieldExpression><![CDATA[$F{expen_ExpenceAmount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="fbe07e80-0bc1-4886-a8ac-5badb63540df"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="29e47ce6-3358-406f-b710-8c92bbb59d6d"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="775edd45-aac4-49be-a5ba-2a7d530f0737"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="a1adb373-2e3e-4f68-8341-3e00d2252116"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

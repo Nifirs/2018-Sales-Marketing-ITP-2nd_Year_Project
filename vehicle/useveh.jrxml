@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="83b1171a-f44c-48f0-8823-0b2b1daa1103">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     used.`vid` AS used_vid,
+     used.`vtype` AS used_vtype,
+     used.`rootid` AS used_rootid,
+     used.`driverid` AS used_driverid
+FROM
+     `used` used]]>
+	</queryString>
+	<field name="used_vid" class="java.lang.Integer"/>
+	<field name="used_vtype" class="java.lang.String"/>
+	<field name="used_rootid" class="java.lang.Integer"/>
+	<field name="used_driverid" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="10" y="0" width="263" height="33" uuid="e47a6acd-256a-48db-8f43-bc3b4204ee24"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Luckyland]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="33" width="100" height="37" uuid="0ae852f5-ddd9-42f4-bb77-08676b9028aa"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Puttalam Road,
+Kelimune
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="197" y="33" width="248" height="22" uuid="6a203fc8-9d74-477b-a6ff-423ddc7de19a"/>
+				<text><![CDATA[Used Vehicle Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="6b07f0ab-e250-407d-bccb-ed58df202c8a"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="138" height="15" uuid="80ab1405-13ef-44ba-aa7d-84f7e997795f"/>
+				<text><![CDATA[vid]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="138" y="19" width="138" height="15" uuid="bbe5cdd2-242c-46ed-990f-e4358b04613a"/>
+				<text><![CDATA[vtype]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="276" y="19" width="138" height="15" uuid="4ba75aa6-e9a8-4292-94a7-6ff0d4eab4bd"/>
+				<text><![CDATA[rootid]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="414" y="19" width="138" height="15" uuid="eb52baeb-eb93-4165-be80-4e39e089523c"/>
+				<text><![CDATA[driverid]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="39b0c860-b7aa-409b-87c9-d040d266b608"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="138" height="15" uuid="972aba4c-18f5-4927-bdff-9f089e810d71"/>
+				<textFieldExpression><![CDATA[$F{used_vid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="138" y="0" width="138" height="15" uuid="0c867828-4fb8-4e88-8f0e-fbceb3c34bca"/>
+				<textFieldExpression><![CDATA[$F{used_vtype}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="276" y="0" width="138" height="15" uuid="72cd9e5b-ffd3-481c-9d2a-65a0b12aa38d"/>
+				<textFieldExpression><![CDATA[$F{used_rootid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="414" y="0" width="138" height="15" uuid="8f1588e1-f36a-4ae8-a6b5-75531fd180a9"/>
+				<textFieldExpression><![CDATA[$F{used_driverid}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="c6aae281-8647-47df-8489-1581afa807f9"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="cca9dff2-de98-42ca-9ed0-3873633b384c"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="ce3cf650-58fe-4169-a213-ec0de1c2d398"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="8215ca6c-2d41-4c26-acf3-e44bf0905958"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="62773c6a-fe91-4d46-9cbf-af84f324b049">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     vehicle.`vid` AS vehicle_vid,
+     vehicle.`vnum` AS vehicle_vnum,
+     vehicle.`vtype` AS vehicle_vtype,
+     vehicle.`vcap` AS vehicle_vcap
+FROM
+     `vehicle` vehicle]]>
+	</queryString>
+	<field name="vehicle_vid" class="java.lang.Integer"/>
+	<field name="vehicle_vnum" class="java.lang.String"/>
+	<field name="vehicle_vtype" class="java.lang.String"/>
+	<field name="vehicle_vcap" class="java.lang.String"/>
+	<group name="vehicle_vid">
+		<groupExpression><![CDATA[$F{vehicle_vid}]]></groupExpression>
+		<groupHeader>
+			<band height="40">
+				<textField>
+					<reportElement style="SubTitle" x="0" y="16" width="506" height="24" forecolor="#006600" uuid="509b24f9-de9a-4055-8eb2-e8b22048f9fc"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{vehicle_vid}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="0" y="0" width="263" height="33" uuid="fb42c486-d269-4108-a42a-223fe57331d0"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Luckyland]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="185" y="48" width="174" height="22" uuid="7a7a9b8f-cb70-4713-ae58-23e7c1243f18"/>
+				<text><![CDATA[Vehicle Report]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="33" width="100" height="37" uuid="4055c91e-29b0-4215-9d2f-1fbdbb9347be"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Puttalam Road,
+Kelimune
+]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="2107d825-1e38-4d0f-99c8-8a003a26324d"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="185" height="15" uuid="42232023-e203-4e35-9302-b1e1fbd11a98"/>
+				<text><![CDATA[vnum]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="185" y="19" width="185" height="15" uuid="30ea5bad-7c25-44eb-a95a-c82fe610dc41"/>
+				<text><![CDATA[vtype]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="370" y="19" width="185" height="15" uuid="aa80be98-af6c-466b-b102-c2470c303563"/>
+				<text><![CDATA[vcap]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="e2ee72bc-4610-4093-bd3a-eb623c79083e"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="185" height="15" uuid="0a181b93-dafa-45c6-bfbe-c9a7c0cbd500"/>
+				<textFieldExpression><![CDATA[$F{vehicle_vnum}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="185" y="0" width="185" height="15" uuid="f94eec66-3dbf-4111-a60a-d0e0defe1876"/>
+				<textFieldExpression><![CDATA[$F{vehicle_vtype}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="370" y="0" width="185" height="15" uuid="a3ef10f1-4439-4f6c-970c-5a70848e37f5"/>
+				<textFieldExpression><![CDATA[$F{vehicle_vcap}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="8a43d02f-64c1-4610-b49b-d1cbd022fe53"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="4b49ecd0-3790-46bf-b802-e9e767ded0a7"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="aee82ab1-9e2c-40f6-9bbd-c5b13c86515a"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="b24f2a85-67b7-4487-8541-c7e7149eac4d"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

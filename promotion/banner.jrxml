@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e34ea409-cbfa-4f52-9786-3bd8cd2e25c4">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     banners.`bid` AS banners_bid,
+     banners.`banrsize` AS banners_banrsize,
+     banners.`qtyb` AS banners_qtyb,
+     banners.`shpname` AS banners_shpname,
+     banners.`shpaddres` AS banners_shpaddres,
+     banners.`shpdis` AS banners_shpdis,
+     banners.`banrprice` AS banners_banrprice
+FROM
+     `banners` banners]]>
+	</queryString>
+	<field name="banners_bid" class="java.lang.Integer"/>
+	<field name="banners_banrsize" class="java.lang.String"/>
+	<field name="banners_qtyb" class="java.lang.Integer"/>
+	<field name="banners_shpname" class="java.lang.String"/>
+	<field name="banners_shpaddres" class="java.lang.String"/>
+	<field name="banners_shpdis" class="java.lang.String"/>
+	<field name="banners_banrprice" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement x="59" y="5" width="100" height="20" uuid="2cdc8a71-377c-47d2-9872-5e85ac3c35fb"/>
+				<textFieldExpression><![CDATA[]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="16" width="100" height="20" uuid="422a95e2-5266-452a-93da-88f15416be69"/>
+				<textFieldExpression><![CDATA[$F{banners_bid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="134" y="16" width="100" height="20" uuid="43a867fd-e9ca-478c-a9f6-e3e370261b3f"/>
+				<textFieldExpression><![CDATA[$F{banners_banrsize}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="267" y="16" width="100" height="20" uuid="4791659c-998f-4de2-8ebd-a711fca163c7"/>
+				<textFieldExpression><![CDATA[$F{banners_qtyb}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="383" y="16" width="100" height="20" uuid="1fc9629d-7bdb-4113-94f7-36a5034232e8"/>
+				<textFieldExpression><![CDATA[$F{banners_shpname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="517" y="15" width="100" height="20" uuid="62582532-a7ce-459e-a687-714ad6075e77"/>
+				<textFieldExpression><![CDATA[$F{banners_shpaddres}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
